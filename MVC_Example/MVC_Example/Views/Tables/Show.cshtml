@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Show";
+}
+<h2>Random Table</h2>
+
+<table>
+    @{
+        for (int i = 0; i < ViewBag.tableSize; i++)
+        {
+            <tr>
+                @{
+                    for (int j = 0; j < ViewBag.tableSize; j++)
+                    {
+                        <td>@ViewBag.tableContent[i, j]</td>
+                    }
+                }
+
+            </tr>
+        }
+    }
+</table>
+
+<style>
+    td, th {
+        border: 1px solid #999;
+        padding: 0.5rem;
+    }
+</style>

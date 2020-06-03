@@ -1,0 +1,42 @@
+﻿@model MVC_Zoo_2.Models.Itinerario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Itinerario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Duracion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Visitantes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Visitantes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitud)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Longitud)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

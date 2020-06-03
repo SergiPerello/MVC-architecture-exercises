@@ -1,0 +1,47 @@
+﻿@model MVC_Zoo_2.Models.Habitat
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Habitat</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clima" class="control-label"></label>
+                <input asp-for="Clima" class="form-control" />
+                <span asp-validation-for="Clima" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vegetacion" class="control-label"></label>
+                <input asp-for="Vegetacion" class="form-control" />
+                <span asp-validation-for="Vegetacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItinerarioId" class="control-label"></label>
+                <select asp-for="ItinerarioId" class ="form-control" asp-items="ViewBag.ItinerarioId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

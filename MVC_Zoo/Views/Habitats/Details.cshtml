@@ -1,0 +1,42 @@
+﻿@model MVC_Zoo.Models.Habitat
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Habitat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.clima)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.clima)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.vegetacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.vegetacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    @foreach (var HabitatEspecie in Model.habitatEspecies)
+    {
+        <p>@HabitatEspecie.especie.nombre_com - @HabitatEspecie.indice</p>
+    }
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
